@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>studentinfo</title>
+</head>
+<body>
+
+Name is : <Span th:text="${student.fname} + ' ' + ${student.lname}" />
+<br> <br>
+Pass is : <Span th:text="${student.pass}"/>
+<br> <br>
+Subject is : <Span th:text="${student.subject}"/>
+</body>
+</html>

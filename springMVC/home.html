@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+   <form th:action="@{/studentinfo}" th:object="${student}" method="GET">
+       FirstName : <input type="text" th:field="*{fname}" />
+       <br> <br>
+       LastName : <input th:field="*{lname}"/>
+       <br><br>
+
+       Freepass : <input th:field="*{pass}"/>
+
+       <span th:if="${#fields.hasErrors('pass')}"
+             th:errors="*{pass}"></span>
+
+       <br><br>
+
+       Options :
+       <select th:field="*{subject}">
+           <option th:each="tempSubject : ${subjects}" th:value="${tempSubject}" th:text="${tempSubject}"/>
+       </select>
+
+       <br><br>
+       <input type="submit" th:value="Submit"/>
+   </form>
+</body>
+</html>
